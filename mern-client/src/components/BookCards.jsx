@@ -18,7 +18,7 @@ const BookCards = ({headline,books}) => {
     <div className='my-16 px-4 lg:px-24'>
         <h2 className='text-5xl text-center font-bold text-black my-5'>{headline}</h2>
 
-        <div>
+        <div className='mt-12'>
         <Swiper
         slidesPerView={1}
         spaceBetween={10}
@@ -44,8 +44,8 @@ const BookCards = ({headline,books}) => {
       >
         
         {
-            books.map(book => <SwiperSlide key={book.Id}>
-                <Link to="/">
+            books.map(book => <SwiperSlide key={book.id}>
+                <Link to={`/books/${book.id}`}>
                     <div className='relative'>
                        <img src="/src/assets/banner-books/book5.jpg" alt="" /> 
                        {/* <img src={book.imageURL} alt="" /> */}
@@ -55,8 +55,8 @@ const BookCards = ({headline,books}) => {
                     </div>
                     <div>
                         <div>
-                            <h3>{book.Title}</h3>
-                            <p>${book.Price}</p>
+                            <h3>{book.title}</h3>
+                            <p>${book.price}</p>
                         </div>
                         
                     </div>

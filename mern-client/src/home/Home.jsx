@@ -1,12 +1,15 @@
 import React from 'react'
 import Banner from '../components/Banner'
-import FavoriteBooks from './FavoriteBooks'
+import BestSellerBooks from './BestSellerBooks'
+import FavBook from './FavBook'
+
 
 const Home = () => {
   return (
   <div>
     <Banner/>
-    <FavoriteBooks/>
+    <BestSellerBooks/>
+    <FavBook/>
   </div>
   )
 }
