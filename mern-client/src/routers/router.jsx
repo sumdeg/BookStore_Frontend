@@ -13,6 +13,7 @@ import Dashboard from "../dashboard/Dashboard";
 import UploadBook from "../dashboard/UploadBook";
 import ManageBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
+import Signup from "../components/Signup";
 
   const router = createBrowserRouter([
     {
@@ -70,8 +71,13 @@ import EditBooks from "../dashboard/EditBooks";
               'Content-Type': 'application/json',
               'Accept': 'application/json'
              }})
-        }
+        },
+       
       ]
+    },
+    {
+      path:"sign-up",
+      element:<Signup/>
     }
   ]);
 
