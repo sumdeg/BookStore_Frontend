@@ -41,11 +41,11 @@ export const SideBar = () => {
             </p>
           </Sidebar.Item>
           <Sidebar.Item
-            href="#"
+            href="/admin/dashboard/manage-categories"
             icon={HiUser}
           >
             <p>
-              Users
+            Manage Categories
             </p>
           </Sidebar.Item>
           <Sidebar.Item

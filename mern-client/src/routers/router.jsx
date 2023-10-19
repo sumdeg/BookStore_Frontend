@@ -14,6 +14,7 @@ import UploadBook from "../dashboard/UploadBook";
 import ManageBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
 import Signup from "../components/Signup";
+import ManageCategories from "../dashboard/ManageCategories";
 
   const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ import Signup from "../components/Signup";
               'Content-Type': 'application/json',
               'Accept': 'application/json'
              }})
+        },
+        {
+          path:"/admin/dashboard/manage-categories",
+          element:<ManageCategories/>
         },
        
       ]
