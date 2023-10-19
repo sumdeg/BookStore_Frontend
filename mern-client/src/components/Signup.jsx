@@ -1,8 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const Signup = () => {
-  
+  const location=useLocation()
+  const navigate=useNavigate()
+  const from=location.state?.from?.pathname || "/";
     const handleSignUp = (event) =>{
         event.preventDefault();
         const form=event.target
@@ -10,8 +12,8 @@ const Signup = () => {
         const lastName=form.lastName.value
         const userName=form.userName.value
         const email=form.email.value
+        const roles=['User']
         const phoneNumber=form.phoneNumber.value
-        const roles=["User"]
         const password=form.password.value
 
         const authenticationObj={
@@ -21,7 +23,7 @@ const Signup = () => {
             email,
             phoneNumber,
             password,
-            roles
+            roles,
         }
         console.log(authenticationObj)
         fetch("https://localhost:7052/api/authentication",{
@@ -30,9 +32,10 @@ const Signup = () => {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
                },
-             body:JSON.stringify(authenticationObj)
-            }).then(res=>res.json()).then(data=>{
+            body:JSON.stringify(authenticationObj)
+            }).then(resp => resp.text()).then(console.log).then(data=>{
                 alert("Registration successfull!")
+                navigate(from,{replace:true})
                 form.reset();
              })
     }
