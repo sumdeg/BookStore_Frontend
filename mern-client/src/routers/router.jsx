@@ -15,6 +15,7 @@ import ManageBooks from "../dashboard/ManageBooks";
 import EditBooks from "../dashboard/EditBooks";
 import Signup from "../components/Signup";
 import ManageCategories from "../dashboard/ManageCategories";
+import Login from "../components/Login";
 
   const router = createBrowserRouter([
     {
@@ -83,6 +84,10 @@ import ManageCategories from "../dashboard/ManageCategories";
     {
       path:"sign-up",
       element:<Signup/>
+    },
+    {
+      path:"login",
+      element:<Login/>
     }
   ]);
 
